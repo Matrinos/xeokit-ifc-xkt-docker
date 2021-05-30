@@ -13,10 +13,10 @@ https://s3.amazonaws.com/ifcopenshell-builds/IfcConvert-v0.6.0-517b819-linux64.z
 RUN wget -q -O COLLADA2GLTF-v2.1.5-linux.zip \
 https://github.com/KhronosGroup/COLLADA2GLTF/releases/download/v2.1.5/COLLADA2GLTF-v2.1.5-linux.zip \
 && mkdir COLLADA2GLTF && unzip COLLADA2GLTF-v2.1.5-linux.zip -d COLLADA2GLTF \
-ln -s /COLLADA2GLTF/COLLADA2GLTF-bin /usr/local/bin/COLLADA2GLTF-bin
+&& ln -s /COLLADA2GLTF/COLLADA2GLTF-bin /usr/local/bin/COLLADA2GLTF-bin
 
 RUN wget -qO- https://github.com/bimspot/xeokit-metadata/releases/download/1.0.0/xeokit-metadata-linux-x64.tar.gz \
  |  tar -zxvf - \
-ln -s /xeokit-metadata-linux-x64/xeokit-metadata /usr/local/bin/xeokit-metadata
+&& ln -s /xeokit-metadata-linux-x64/xeokit-metadata /usr/local/bin/xeokit-metadata
 
-RUN npm i @xeokit/xeokit-gltf-to-xkt
+RUN npm i -g @xeokit/xeokit-gltf-to-xkt
